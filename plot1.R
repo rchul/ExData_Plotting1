@@ -12,9 +12,11 @@ usedata <- rbind(firstd,secondd)
 datetime <- as.POSIXct(paste(usedata$Date,usedata$Time))
 
 #First One
+png("plot1.png")
+
 par(mfcol=c(1,1))
+
 hist(as.numeric(as.character(usedata$Global_active_power)),freq = TRUE,col="red",
      xlab="Global Active Power(kilowatts)",main = "Global Active Power")
 
-dev.copy(png,"plot1.png")
 dev.off()

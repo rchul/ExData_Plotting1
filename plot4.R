@@ -11,10 +11,11 @@ usedata <- rbind(firstd,secondd)
 
 datetime <- as.POSIXct(paste(usedata$Date,usedata$Time))
 
-#Third One
+#Forth One
+png("plot4.png")
+
 par(mfcol=c(2,2))
 
-datetime <- as.POSIXct(paste(usedata$Date,usedata$Time))
 plot(datetime,as.numeric(as.character(usedata$Global_active_power)),type = "l",xlab = "",ylab = "Global Active Power(kilowatts)")
 
 plot(datetime,as.numeric(as.character(usedata$Sub_metering_1)),type="l",ylab = "Energy Sub Metering",xlab= "")
@@ -26,5 +27,4 @@ plot(datetime,as.numeric(as.character(usedata$Voltage)),type = "l",ylab = "Volta
 
 plot(datetime,as.numeric(as.character(usedata$Global_reactive_power)),type = "l",ylab = "Global_reactive_power")
 
-dev.copy(png,"plot4.png")
 dev.off()

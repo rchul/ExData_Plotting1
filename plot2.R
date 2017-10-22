@@ -12,8 +12,10 @@ usedata <- rbind(firstd,secondd)
 datetime <- as.POSIXct(paste(usedata$Date,usedata$Time))
 
 #Second One
+png("plot2.png")
+
 par(mfcol=c(1,1))
+
 plot(datetime,as.numeric(as.character(usedata$Global_active_power)),type = "l",xlab = "",ylab = "Global Active Power(kilowatts)")
 
-dev.copy(png,"plot2.png")
 dev.off()
